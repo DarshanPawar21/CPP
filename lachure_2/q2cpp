@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+class VotingChecker {
+private:
+    int age;
+public:
+    void setAge(int a) { age = a; }
+
+    bool isEligible() {
+        return age >= 18;
+    }
+};
+
+int main() {
+    VotingChecker vc;
+    int age;
+    cout << "Enter age: ";
+    cin >> age;
+    vc.setAge(age);
+
+    if (vc.isEligible())
+        cout << "Eligible to vote." << endl;
+    else
+        cout << "Not eligible to vote." << endl;
+
+    return 0;
+}
