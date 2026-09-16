@@ -1,29 +1,44 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-// Wap to find sum of 1 to using all loop:
-int main(){
-    int i=1,num,sum=0;
-    cin >> num;
-    // while Loop
-    while (i<=num)
+class Animal
+{
+public:
+    virtual void displayDetails()
     {
-        sum = sum + i;
-        i++;
+        cout << "This is an Animal" << endl;
     }
-    cout << sum;
-    return 0;
-
-    //Do...while Loop
-    do
-    {
-        sum = sum + i;
-        i++;
-    } while (i<=num);
-      
-    //For Loop
-    for(i;i<=num;i++){
-        sum = sum + i;
-    }
-    
 };
+
+class Dog : public Animal
+{
+public:
+    void displayDetails()
+    {
+        cout << "Dog - Sound: Bark" << endl;
+    }
+};
+
+class Cat : public Animal
+{
+public:
+    void displayDetails()
+    {
+        cout << "Cat - Sound: Meow" << endl;
+    }
+};
+
+int main()
+{
+    Dog d;
+    Cat c;
+    Animal *a[2];
+
+    a[0] = &d;
+    a[1] = &c;
+
+    a[0]->displayDetails();
+    a[1]->displayDetails();
+
+    return 0;
+}

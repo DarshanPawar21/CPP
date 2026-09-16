@@ -1,76 +1,51 @@
 #include <iostream>
 using namespace std;
 
-
-// Even Number :
-int main()
+class Animal
 {
-    int num, i = 1;
-    cin >> num;
+    string name;
+    string sound;
 
-    // While Loop
-    while (i <= num)
+public:
+    void setdata(string n, string s)
     {
-        if (i % 2 == 0)
-        {
-            cout << i << endl;
-        }
-        i++;
+       this-> name = n;
+       this-> sound = s;
     }
 
-    // Do While Loop
-    do
+    string getsound()
     {
-        if (i % 2 == 0)
-        {
-            cout << i << endl;
-        }
-        i++;
-    } while (i <= num);
-
-    // For Loop
-    for (i; i <= num; i++)
-    {
-        if (i % 2 == 0)
-        {
-            cout << i << endl;
-        }
+        return sound;
     }
 };
 
-// odd Number:
+class Dog : public Animal
+{
+public:
+    void makeSound()
+    {
+        cout << "Dog Sound: " << getsound() << endl;
+    }
+};
+
+class Cat : public Animal
+{
+public:
+    void makeSound()
+    {
+        cout << "Cat Sound: " << getsound() << endl;
+    }
+};
 
 int main()
 {
-    int num, i = 1;
-    cin >> num;
+    Dog d;
+    Cat c;
 
-    // While Loop
-    while (i <= num)
-    {
-        if (i % 2 != 0)
-        {
-            cout << i << endl;
-        }
-        i++;
-    }
+    d.setdata("Dog", "Bark");
+    c.setdata("Cat", "Meow");
+    d.makeSound();
+    c.makeSound();
 
-    // Do While Loop
-    do
-    {
-        if (i % 2 != 0)
-        {
-            cout << i << endl;
-        }
-        i++;
-    } while (i <= num);
-
-    // For Loop
-    for (i; i <= num; i++)
-    {
-        if (i % 2 != 0)
-        {
-            cout << i << endl;
-        }
-    }
-};
+    return 0;
+}

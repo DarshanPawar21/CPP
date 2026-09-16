@@ -1,44 +1,35 @@
 #include <iostream>
+#include<conio.h>
 using namespace std;
-// wap to  swap values of variable using third variable/withount using using third variable.
-// // using third variable:
-// int main()
-// {
-//     int num1, num2, temp;
-//     cout << "Enter the num1 value :";
-//     cin >> num1;
-//     cout << "Enter the num2 value :";
-//     cin >> num2;
-//     cout << "Before saping :" << endl;
-//     cout << "Number 1 is : " << num1 << endl;
-//     cout << "Numer 2 is : " << num2 << endl;
 
-//     cout << "After swaping :" << endl;
-//     temp = num1;
-//     num1 = num2;
-//     num2 = temp;
-//     cout << "Number 1 is : " << num1 << endl;
-//     cout << "Numer 2 is : " << num2 << endl;
-//     return 0;
-// };
+class Book
+{
+public:
+    string title;
+    string author;
+    int publishedYear;
+
+    void displayBook()
+    {
+        cout << "Title: " << title << endl;
+        cout << "Author: " << author << endl;
+        cout << "Published Year: " << publishedYear << endl << endl;
+    }
+};
 
 int main()
 {
-    int num1, num2;
-    cout << "Enter the num1 value :";
-    cin >> num1;
-    cout << "Enter the num2 value :";
-    cin >> num2;
+    Book b[2];
+    b[0].title = "C++ Programming";
+    b[0].author = "Akhil Sir";
+    b[0].publishedYear = 2026;
 
-    cout << "Before saping :" << endl;
-    cout << "Number 1 is : " << num1 << endl;
-    cout << "Numer 2 is : " << num2 << endl;
-
-    cout << "After swaping :" << endl;
-    num1 = num1 + num2;  // num1 = 1 , num2 = 2, sum = 3
-    num2 = num1 - num2; // num2 = 2 : num1 = 3 - num2 = 2 == 1
-    num1 = num1 - num2;
-
-    cout << "Number 1 is : " << num1 << endl;
-    cout << "Numer 2 is : " << num2 << endl;
+    b[1].title = "Java Programming";
+    b[1].author = "Darshan";
+    b[1].publishedYear = 1990;
+    for(int i = 0; i < 2; i++)
+    {
+        b[i].displayBook();
+    }
+    return 0;
 }
